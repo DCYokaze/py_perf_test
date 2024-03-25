@@ -12,12 +12,14 @@ import time
 # def test_remove_from_list_last(input1, benchmark):
 #   benchmark(remove_from_list_last, input1)
 # @pytest.mark.some_mark
-def test_remove_from_list_last(benchmark):
-  result = benchmark(remove_from_list_last )
+@pytest.mark.parametrize("n", [1, 10**2, 10**4])
+def test_remove_from_list_last(benchmark,n):
+  result = benchmark(remove_from_list_last,n )
   # print(f"result is_______________------------ {result}")
 
-def test_remove_from_list_first(benchmark):
-  result = benchmark(remove_from_list_first )
+@pytest.mark.parametrize("n", [1, 10**2, 10**4])
+def test_remove_from_list_first(benchmark,n):
+  result = benchmark(remove_from_list_first,n )
   # print(f"result is_______________------------ {result}")
   
 def remove_from_list_last(n=10**4):
